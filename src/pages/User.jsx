@@ -38,7 +38,7 @@ const User = () => {
       <Sidebar />
       <main>
         <h1>Bonjour <span class="username">{firstName} {lastName}</span></h1>
-        <p>Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
+        <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
         <UserActivityChart />
       </main>
     </React.Fragment>
