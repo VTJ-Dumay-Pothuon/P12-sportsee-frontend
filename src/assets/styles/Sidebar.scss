@@ -1,0 +1,34 @@
+aside {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 90px;
+    bottom: 0;
+    width: 115px;
+    background-color: #000;
+    .logo {
+        width: 64px;
+        height: 64px;
+        border-radius: 6px;
+        margin: 10px;
+        background-color: #fff;
+        img {
+            width: 60%;
+            height: 60%;
+            margin: 20%;
+        }
+    }
+    .copyright {
+        transform: rotate(-180deg);
+        margin-bottom: -90px;
+        margin-top: 50px;
+        p {
+            color: #fff;
+            font-size: 12px;
+            writing-mode: vertical-lr;
+        }
+    }
+}
