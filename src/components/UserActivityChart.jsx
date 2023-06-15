@@ -1,0 +1,60 @@
+// UserActivityChart.js
+
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { getUserData } from '../apiCaller';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+import '../assets/styles/UserActivityChart.scss';
+
+const UserActivityChart = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getUserData(id, '/user/:id/activity');
+        setUserData(data);
+      } catch (error) {
+        navigate('/community');
+      }
+    };
+
+    fetchData();
+  }, [id, navigate]);
+
+  if (!userData) {
+    return <div>Loading...</div>;
+  }
+
+  const { sessions } = userData;
+
+  // Function to format the tick values of the X-axis
+  const formatXAxisTick = (tickItem) => {
+    const date = new Date(tickItem);
+    return date.getDate();
+  };
+
+  return (
+    <div className="chart-container">
+      <h2 className="chart-title">Activité quotidienne</h2>
+      <ResponsiveContainer width="60%" height={300}>
+      <BarChart data={sessions} margin={{ top: 60, right: 15, left: 12, bottom: 5 }} barGap={8}>
+          <CartesianGrid vertical={false} />
+          <CartesianGrid  stroke="#DEDEDE" strokeDasharray="3 3" horizontal={true} />
+          <XAxis dataKey="day" tickFormatter={formatXAxisTick} axisLine={{ stroke: '#DEDEDE' }} scale='point' />
+          <YAxis yAxisId="left" orientation="left" hide={true} />
+          <YAxis yAxisId="right" orientation="right" axisLine={false} tickMargin={50} tick={{ fill: '#74798C' }} domain={[0, 'dataMax']} />
+          <Tooltip labelFormatter={(label) => new Date(label).toLocaleDateString('fr-FR')} />
+          <Legend align="right" verticalAlign="top" wrapperStyle={{ top: 0 }} iconType="circle" />
+          <Bar dataKey="kilogram" fill="#282D30" name={<span className="legend-text">Poids (kg)</span>} barSize={7} radius={[3, 3, 0, 0]} yAxisId="right" />
+          <Bar dataKey="calories" fill="#E60000" name={<span className="legend-text">Calories brûlées (kCal)</span>} barSize={7} radius={[3, 3, 0, 0]} yAxisId="left" />
+        </BarChart>
+      </ResponsiveContainer>
+    </div>
+  );
+};
+
+export default UserActivityChart;
