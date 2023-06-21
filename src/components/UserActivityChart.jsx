@@ -37,6 +37,19 @@ const UserActivityChart = () => {
     return date.getDate();
   };
 
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="custom-tooltip" style={{ backgroundColor: '#E60000' }}>
+          <p>{`${payload[0].payload.kilogram}kg`}</p>
+          <p>{`${payload[0].payload.calories}kCal`}</p>
+        </div>
+      );
+    }
+  
+    return null;
+  };
+
   return (
     <div className="chart-container">
       <h2 className="chart-title">Activité quotidienne</h2>
@@ -46,9 +59,9 @@ const UserActivityChart = () => {
           <CartesianGrid  stroke="#DEDEDE" strokeDasharray="3 3" horizontal={true} />
           <XAxis dataKey="day" tickFormatter={formatXAxisTick} axisLine={{ stroke: '#DEDEDE' }} scale='point' />
           <YAxis yAxisId="left" orientation="left" hide={true} />
-          <YAxis yAxisId="right" orientation="right" axisLine={false} tickMargin={50} tick={{ fill: '#74798C' }} domain={[0, 'dataMax']} />
-          <Tooltip labelFormatter={(label) => new Date(label).toLocaleDateString('fr-FR')} />
-          <Legend align="right" verticalAlign="top" wrapperStyle={{ top: 0 }} iconType="circle" />
+          <YAxis yAxisId="right" orientation="right" axisLine={false} tickMargin={50} tick={{ fill: '#74798C' }} tickCount={3} domain={['dataMin - 10', 'dataMax + 5']} />
+          <Tooltip content={<CustomTooltip />} />
+          <Legend align="right" verticalAlign="top" wrapperStyle={{ top: 0 }} iconType="circle" iconSize="8" />
           <Bar dataKey="kilogram" fill="#282D30" name={<span className="legend-text">Poids (kg)</span>} barSize={7} radius={[3, 3, 0, 0]} yAxisId="right" />
           <Bar dataKey="calories" fill="#E60000" name={<span className="legend-text">Calories brûlées (kCal)</span>} barSize={7} radius={[3, 3, 0, 0]} yAxisId="left" />
         </BarChart>

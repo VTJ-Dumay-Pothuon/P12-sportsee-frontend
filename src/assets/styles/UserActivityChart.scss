@@ -2,7 +2,7 @@
     color: #74798C;
     font-size: 14px;
     font-weight: 500;
-    margin-right: 24px;
+    margin-right: 20px;
   }
 
 .recharts-cartesian {
@@ -13,6 +13,7 @@
         stroke-dasharray: 3 3;
       }
   }
+
 .chart {
     &-container {
         position: relative;
@@ -28,4 +29,15 @@
         font-size: 15px;
         font-weight: 500;
     }
+}
+
+.custom-tooltip {
+  padding: 5px 10px;
+  background-color: #E60000;
+  text-align: center;
+  p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+  }
 }
