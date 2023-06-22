@@ -6,7 +6,7 @@ body {
     font-family: 'Roboto';
 }
 
-main { margin: 50px 250px }
+main { margin: 50px 250px 0 250px }
 
 h1 { font-size: 48px }
 

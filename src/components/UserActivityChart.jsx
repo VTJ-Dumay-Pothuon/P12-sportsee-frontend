@@ -1,5 +1,3 @@
-// UserActivityChart.js
-
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getUserData } from '../apiCaller';
@@ -40,7 +38,7 @@ const UserActivityChart = () => {
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
-        <div className="custom-tooltip" style={{ backgroundColor: '#E60000' }}>
+        <div className="custom-tooltip--activity" style={{ backgroundColor: '#E60000' }}>
           <p>{`${payload[0].payload.kilogram}kg`}</p>
           <p>{`${payload[0].payload.calories}kCal`}</p>
         </div>
