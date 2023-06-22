@@ -59,8 +59,8 @@ const UserSessionsChart = () => {
   ];
 
   return (
-    <LineChart width={270} height={250} data={extrapolatedData} margin={{ top: 0, right: 0, left: 0, bottom: -30 }}
-    style={{ backgroundColor: '#F00',  borderRadius: '5px' }}>
+    <LineChart width={260} height={260} data={extrapolatedData} margin={{ top: 0, right: 0, left: 0, bottom: -30 }}
+    style={{ backgroundColor: '#F00',  borderRadius: '5px' }} className='sessions-chart'>
       <defs>
         <linearGradient id="lineGradient">
           <stop offset="0%" stopColor="rgba(255, 255, 255, 0.45)" />
