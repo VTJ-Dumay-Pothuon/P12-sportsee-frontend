@@ -6,8 +6,12 @@ body {
     font-family: 'Roboto';
 }
 
-main { margin: 50px 250px 0 250px }
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 250px;
+ }
 
 h1 { font-size: 48px }
 
-p { font-size: 18px }
+p { font-size: 18px ; margin-top: 0 }
