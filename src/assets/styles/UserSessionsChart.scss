@@ -1,0 +1,27 @@
+.custom-tooltip--sessions {
+    padding: 1px 10px;
+    p {
+        font-size: 14px;
+        line-height: 24px;
+        color: #000;
+      }
+  }
+
+.custom-legend--sessions {
+  position: absolute;
+  width: 150px;
+  top: 8px;
+  left: 35px;
+  text-align: left;
+  color: rgba($color: #fff, $alpha: 0.5);
+}
+
+.recharts-tooltip-cursor {
+  stroke: rgba($color: #000, $alpha: 0.25);
+  stroke-width: 270px;
+  transform: translateX(135px);
+}
+
+.recharts-cartesian-axis-tick-value {
+  opacity: 0.5;
+}
