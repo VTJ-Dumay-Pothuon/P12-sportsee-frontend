@@ -4,8 +4,10 @@ import { getUserData } from '../apiCaller';
 
 import Topbar from '../components/Topbar';
 import Sidebar from '../components/Sidebar';
+
 import UserActivityChart from '../components/UserActivityChart';
 import UserSessionsChart from '../components/UserSessionsChart';
+import UserPerformanceChart from '../components/UserPerformanceChart';
 
 import '../assets/styles/User.scss';
 
@@ -38,10 +40,11 @@ const User = () => {
       <Topbar />
       <Sidebar />
       <main>
-        <h1>Bonjour <span className="username">{firstName} {lastName}</span></h1>
+        <h1 className='user-title'>Bonjour <span className="username">{firstName} {lastName}</span></h1>
         <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
         <UserActivityChart />
         <UserSessionsChart />
+        <UserPerformanceChart />
       </main>
     </React.Fragment>
   );
