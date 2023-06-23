@@ -8,6 +8,7 @@ import Sidebar from '../components/Sidebar';
 import UserActivityChart from '../components/UserActivityChart';
 import UserSessionsChart from '../components/UserSessionsChart';
 import UserPerformanceChart from '../components/UserPerformanceChart';
+import UserTodayScoreChart from '../components/UserTodayScoreChart';
 
 import '../assets/styles/User.scss';
 
@@ -45,6 +46,7 @@ const User = () => {
         <UserActivityChart />
         <UserSessionsChart />
         <UserPerformanceChart />
+        <UserTodayScoreChart />
       </main>
     </React.Fragment>
   );
