@@ -9,6 +9,7 @@ import UserActivityChart from '../components/UserActivityChart';
 import UserSessionsChart from '../components/UserSessionsChart';
 import UserPerformanceChart from '../components/UserPerformanceChart';
 import UserTodayScoreChart from '../components/UserTodayScoreChart';
+import UserDailyCards from '../components/UserDailyCards';
 
 import '../assets/styles/User.scss';
 
@@ -44,6 +45,7 @@ const User = () => {
         <h1 className='user-title'>Bonjour <span className="username">{firstName} {lastName}</span></h1>
         <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
         <UserActivityChart />
+        <UserDailyCards />
         <UserSessionsChart />
         <UserPerformanceChart />
         <UserTodayScoreChart />
