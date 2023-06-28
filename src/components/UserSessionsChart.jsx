@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { LineChart, Line, XAxis, YAxis, Tooltip, Legend } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { getUserData } from '../apiCaller';
 
 import '../assets/styles/UserSessionsChart.scss';
@@ -59,39 +59,42 @@ const UserSessionsChart = () => {
   ];
 
   return (
-    <LineChart width={260} height={260} data={extrapolatedData} margin={{ top: 0, right: 0, left: 0, bottom: -30 }}
-    style={{ backgroundColor: '#F00',  borderRadius: '5px' }} className='sessions-chart'>
-      <defs>
-        <linearGradient id="lineGradient">
-          <stop offset="0%" stopColor="rgba(255, 255, 255, 0.45)" />
-          <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
-        </linearGradient>
-        <filter id="dotShadow" x="-50%" y="-50%" width="200%" height="200%">
-          <feDropShadow dx={0} dy={0} stdDeviation={5} floodColor="rgba(255, 255, 255, 0.5)" />
-        </filter>
-      </defs>
-      <XAxis
-        dataKey="day"
-        tickFormatter={convertToFrenchDay}
-        axisLine={{ stroke: 'none' }}
-        tick={{ fill: '#FFF', dy: -30 }}
-      />
-      <YAxis hide domain={['dataMin - 30', 'dataMax + 50']} />
-      <Tooltip content={<CustomTooltip />} />
-      <Legend iconType="none" content={CustomLegend} layout="vertical" verticalAlign="top" align="left" />
-      <Line
-        dataKey="sessionLength"
-        type="basis"
-        dot={false}
-        activeDot={({ cx, cy }) => !(cx <= 0 || cx >= 250 ) ? (
-            <circle cx={cx} cy={cy} r={4} fill="white" filter="url(#activeDotShadow)" />
-        ) : null }
-        name={<span className="legend-text">Durée moyenne des sessions</span>}
-        stroke="url(#lineGradient)"
-        strokeWidth={3}
-        isAnimationActive={false}
-      />
-    </LineChart>
+    <div className="chart-container-small">
+      <ResponsiveContainer width="100%" height="100%">
+        <LineChart data={extrapolatedData} margin={{ top: 0, right: 0, left: 0, bottom: -30 }}
+        style={{ backgroundColor: '#F00',  borderRadius: '5px' }} className='sessions-chart'>
+          <defs>
+            <linearGradient id="lineGradient">
+              <stop offset="0%" stopColor="rgba(255, 255, 255, 0.45)" />
+              <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
+            </linearGradient>
+            <filter id="dotShadow" x="-50%" y="-50%" width="200%" height="200%">
+              <feDropShadow dx={0} dy={0} stdDeviation={5} floodColor="rgba(255, 255, 255, 0.5)" />
+            </filter>
+          </defs>
+          <XAxis
+            dataKey="day"
+            tickFormatter={convertToFrenchDay}
+            axisLine={{ stroke: 'none' }}
+            tick={{ fill: '#FFF', dy: -30 }}
+          />
+          <YAxis hide domain={['dataMin - 30', 'dataMax + 50']} />
+          <Tooltip content={<CustomTooltip />} />
+          <Legend iconType="none" content={CustomLegend} layout="vertical" verticalAlign="top" align="left" />
+          <Line
+            dataKey="sessionLength"
+            type="basis"
+            dot={false}
+            activeDot={({ cx, cy }) => !(cx <= 0 || cx >= 250 ) ? (
+                <circle cx={cx} cy={cy} r={4} fill="white" filter="url(#activeDotShadow)" />
+            ) : null }
+            name={<span className="legend-text">Durée moyenne des sessions</span>}
+            stroke="url(#lineGradient)"
+            strokeWidth={3}
+          />
+        </LineChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 

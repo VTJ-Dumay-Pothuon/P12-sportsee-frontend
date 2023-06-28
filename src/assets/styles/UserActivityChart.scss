@@ -14,23 +14,6 @@
       }
   }
 
-.chart {
-    &-container {
-        position: relative;
-        width: fit-content;
-        height: 100%;
-    }
-    &-title {
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: #20253A;
-        margin: 0;
-        font-size: 15px;
-        font-weight: 500;
-    }
-}
-
 .custom-tooltip--activity {
   padding: 5px 10px;
   background-color: #E60000;

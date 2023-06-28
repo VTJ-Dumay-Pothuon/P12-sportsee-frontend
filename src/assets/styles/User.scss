@@ -1,5 +1,28 @@
-.user-title {
+.user-title, .user-congrats {
   flex-basis: 100%;
 }
 
 .username { color: #FF0101}
+
+.chart {
+  &-container {
+      position: relative;
+      width: 60vw;
+      height: 300px;
+      &-small {
+          width:  20vw;
+          max-width: 260px;
+          height: 20vw;
+          max-height: 260px;
+      }
+  }
+  &-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: #20253A;
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+  }
+}

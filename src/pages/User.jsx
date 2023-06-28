@@ -43,7 +43,7 @@ const User = () => {
       <Sidebar />
       <main>
         <h1 className='user-title'>Bonjour <span className="username">{firstName} {lastName}</span></h1>
-        <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
+        <p className='user-congrats'>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
         <UserActivityChart />
         <UserDailyCards />
         <UserSessionsChart />

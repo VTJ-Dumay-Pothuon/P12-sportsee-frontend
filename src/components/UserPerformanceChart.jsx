@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from 'recharts';
+import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer } from 'recharts';
 import { getUserData } from '../apiCaller';
 
 import '../assets/styles/UserPerformanceChart.scss';
@@ -30,22 +30,24 @@ const UserPerformanceChart = () => {
   const performanceLabels = performanceData.kind;
 
   return (
-    <RadarChart
-      cx={130}
-      cy={130}
-      width={260}
-      height={260}
-      outerRadius={80}
-      startAngle={210}
-      endAngle={570}
-      data={performanceData.data}
-      style={{ backgroundColor: '#282D30', borderRadius: '5px' }}
-      className='performance-chart'
-    >
-      <PolarGrid gridType="polygon" radialLines={false}  />
-      <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFF', fontSize: '12px' }} tickFormatter={label => performanceLabels[label]} />
-      <Radar dataKey="value" stroke={"false"} fill="#F11" fillOpacity={0.7} />
-    </RadarChart>
+    <div className="chart-container-small">
+      <ResponsiveContainer width="100%" height="100%">
+        <RadarChart
+          cx='50%'
+          cy='50%'
+          outerRadius={80}
+          startAngle={210}
+          endAngle={570}
+          data={performanceData.data}
+          style={{ backgroundColor: '#282D30', borderRadius: '5px' }}
+          className='performance-chart'
+        >
+          <PolarGrid gridType="polygon" radialLines={false}  />
+          <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFF', fontSize: '0.75vw' }} tickFormatter={label => performanceLabels[label]} />
+          <Radar dataKey="value" stroke={"false"} fill="#F11" fillOpacity={0.7} />
+        </RadarChart>
+      </ResponsiveContainer>
+    </div>
   );
 };
 
