@@ -10,8 +10,12 @@ main {
     display: flex;
     flex-wrap: wrap;
     margin-left: 15vw;
- }
+}
 
 h1 { font-size: 48px }
 
 p { font-size: 18px ; margin-top: 0 }
+
+.error-page * {
+    flex-basis: 100%;
+}

@@ -9,11 +9,11 @@ const NotFound = () => {
       <Topbar />
       <div className="container">
         <Sidebar />
-        <div className="content">
-          <h2>404 - Page Not Found</h2>
-          <p>The page you are looking for does not exist.</p>
-          <Link to="/">Go to Home</Link>
-        </div>
+        <main className='error-page'>
+          <h2>404 - Utilisateur introuvable</h2>
+          <p>L'utilisateur que vous recherchez n'existe pas.</p>
+          <Link to="/">Retour à la page d'accueil</Link>
+        </main>
       </div>
     </div>
   );
