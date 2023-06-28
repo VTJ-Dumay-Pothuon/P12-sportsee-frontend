@@ -33,5 +33,8 @@ header {
                 }
             }
         }
+        @media screen and (min-width: 1440px) {
+            margin-right: calc((100vw - 1440px));
+        }
     }
 }

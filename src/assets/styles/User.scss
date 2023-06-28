@@ -8,6 +8,7 @@
   &-container {
       position: relative;
       width: 60vw;
+      max-width: 800px;
       height: 300px;
       &-small {
           width:  20vw;
