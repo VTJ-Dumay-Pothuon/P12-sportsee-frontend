@@ -14,13 +14,13 @@ const Topbar = () => {
       <nav>
         <ul>
           <li>
-            <Link to="*">Accueil</Link>
+            <Link>Accueil</Link>
           </li>
           <li>
-            <Link to="*">Profil</Link>
+            <Link>Profil</Link>
           </li>
           <li>
-            <Link to="*">Réglage</Link>
+            <Link>Réglage</Link>
           </li>
           <li>
             <Link to="/">Communauté</Link>
