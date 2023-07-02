@@ -3,8 +3,6 @@ import { useParams } from 'react-router-dom';
 import { RadarChart, PolarGrid, PolarAngleAxis, Radar, ResponsiveContainer } from 'recharts';
 import { getUserData } from '../apiCaller';
 
-import '../assets/styles/UserPerformanceChart.scss';
-
 const UserPerformanceChart = () => {
   const { id } = useParams();
   const [performanceData, setPerformanceData] = useState(null);

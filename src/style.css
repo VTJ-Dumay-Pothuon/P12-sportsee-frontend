@@ -4,12 +4,15 @@ body {
     margin:  0;
     padding: 0;
     font-family: 'Roboto';
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 main {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 15vw;
+    margin-left: calc(115px + 5vw);
+    width: calc(100vw - 10vw);
 }
 
 h1 { font-size: 48px }

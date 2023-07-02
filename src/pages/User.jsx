@@ -41,14 +41,22 @@ const User = () => {
     <React.Fragment>
       <Topbar />
       <Sidebar />
-      <main>
+      <section className='user-header'>
         <h1 className='user-title'>Bonjour <span className="username">{firstName} {lastName}</span></h1>
         <p className='user-congrats'>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
-        <UserActivityChart />
-        <UserDailyCards />
-        <UserSessionsChart />
-        <UserPerformanceChart />
-        <UserTodayScoreChart />
+      </section>
+      <main className='user-body'>
+        <section className='left'>
+          <UserActivityChart />
+          <section className='left-bottom'>
+            <UserSessionsChart />
+            <UserPerformanceChart />
+            <UserTodayScoreChart />
+          </section>
+        </section>
+        <section className='right'>
+          <UserDailyCards />
+        </section>
       </main>
     </React.Fragment>
   );

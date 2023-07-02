@@ -41,7 +41,8 @@ const UserTodayScoreChart = () => {
         <tspan x={cx} dy="1.2em"  fontSize="18px" fill="#74798C">de votre</tspan>
         <tspan x={cx} dy="1.2em"  fontSize="18px" fill="#74798C">objectif</tspan>
       </text>
-      <text x={cx - 100} y={cy - 100 + (window.innerWidth < 1440 ? (1440 - window.innerWidth) / 30 : 0)} 
+      <text x={cx - 100 + (window.innerWidth < 1440 ? (1440 - window.innerWidth) / 20 : 0)}
+      y={cy - 100 + (window.innerWidth < 1440 ? (1440 - window.innerWidth) / 20 : 0)} 
             textAnchor="start" className="score-label" fill="#20253A">
         Score
       </text>
@@ -49,7 +50,7 @@ const UserTodayScoreChart = () => {
   ); 
 
   return (
-    <div className="chart-container-small" style={{marginLeft: '60px'}}>
+    <div className="chart-container-small">
       <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           innerRadius="70%"
