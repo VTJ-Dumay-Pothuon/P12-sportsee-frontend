@@ -3,7 +3,10 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 5vw;
-    flex-basis: 25%;
+    flex-basis: 20%;
     padding-left: 5vw;
     height: 1px;
+    @media screen and (min-width: 1440px) {
+        flex-basis: 25%;
+    }
 }
