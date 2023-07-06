@@ -21,10 +21,17 @@ const User = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const data = await getUserData(id, '/user/:id');
+        const data = await getUserData(id, '/user/:id')
+        .then (response => {
+          if (response === undefined) {
+            navigate('/404');
+          } else {
+            return response;
+          }
+        });
         setUserData(data);
       } catch (error) {
-        navigate('/community');
+        console.error('Error fetching user data:', error);
       }
     };
 
