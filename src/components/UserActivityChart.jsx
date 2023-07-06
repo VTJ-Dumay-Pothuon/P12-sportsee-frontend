@@ -16,7 +16,7 @@ const UserActivityChart = () => {
         const data = await getUserData(id, '/user/:id/activity');
         setUserData(data);
       } catch (error) {
-        navigate('/community');
+        console.error('Error fetching user data:', error);
       }
     };
 
