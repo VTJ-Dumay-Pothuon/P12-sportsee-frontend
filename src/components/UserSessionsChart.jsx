@@ -51,10 +51,13 @@ const UserSessionsChart = () => {
 
   // Extrapolate the line trajectory by adding extra data points
   const extrapolatedData = [
-    { day: 0, sessionLength: sessionsData[0].sessionLength + (sessionsData[0].sessionLength - sessionsData[1].sessionLength) },
+    { day: 0, sessionLength: sessionsData[0].sessionLength + 
+      (sessionsData[0].sessionLength - sessionsData[1].sessionLength) },
     // Add an extra data point before the first data point
     ...sessionsData,
-    { day: sessionsData.length + 1, sessionLength: sessionsData[sessionsData.length - 1].sessionLength + (sessionsData[sessionsData.length - 1].sessionLength/2 - sessionsData[sessionsData.length - 2].sessionLength) },
+    { day: sessionsData.length + 1, sessionLength: sessionsData[sessionsData.length - 1].sessionLength + 
+      (sessionsData[sessionsData.length - 1].sessionLength/2 - 
+      sessionsData[sessionsData.length - 2].sessionLength) },
     // Add an extra data point after the last data point
   ];
 
@@ -80,7 +83,8 @@ const UserSessionsChart = () => {
           />
           <YAxis hide domain={['dataMin - 30', 'dataMax + 50']} />
           <Tooltip content={<CustomTooltip />} />
-          <Legend iconType="none" content={CustomLegend} layout="vertical" verticalAlign="top" align="left" />
+          <Legend iconType="none" content={CustomLegend} layout="vertical" 
+          verticalAlign="top" align="left" />
           <Line
             dataKey="sessionLength"
             type="basis"

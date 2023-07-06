@@ -41,7 +41,8 @@ const UserPerformanceChart = () => {
           className='performance-chart'
         >
           <PolarGrid gridType="polygon" radialLines={false}  />
-          <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFF', fontSize: '0.75vw' }} tickFormatter={label => performanceLabels[label]} />
+          <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFF', fontSize: '0.75vw' }} 
+          tickFormatter={label => performanceLabels[label]} />
           <Radar dataKey="value" stroke={"false"} fill="#F11" fillOpacity={0.7} />
         </RadarChart>
       </ResponsiveContainer>

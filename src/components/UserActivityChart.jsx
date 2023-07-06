@@ -55,13 +55,21 @@ const UserActivityChart = () => {
       <BarChart data={sessions} margin={{ top: 60, right: 15, left: 12, bottom: 5 }} barGap={8}>
           <CartesianGrid vertical={false} />
           <CartesianGrid  stroke="#DEDEDE" strokeDasharray="3 3" horizontal={true} />
-          <XAxis dataKey="day" tickFormatter={formatXAxisTick} axisLine={{ stroke: '#DEDEDE' }} scale='point' />
+          <XAxis dataKey="day" tickFormatter={formatXAxisTick} 
+          axisLine={{ stroke: '#DEDEDE' }} scale='point' />
           <YAxis yAxisId="left" orientation="left" hide={true} />
-          <YAxis yAxisId="right" orientation="right" axisLine={false} tickMargin={50} tick={{ fill: '#74798C' }} tickCount={3} domain={['dataMin - 10', 'dataMax + 5']} />
+          <YAxis yAxisId="right" orientation="right" axisLine={false} 
+          tickMargin={50} tick={{ fill: '#74798C' }} tickCount={3} 
+          domain={['dataMin - 10', 'dataMax + 5']} />
           <Tooltip content={<CustomTooltip />} />
-          <Legend align="right" verticalAlign="top" wrapperStyle={{ top: 0 }} iconType="circle" iconSize="8" />
-          <Bar dataKey="kilogram" fill="#282D30" name={<span className="legend-text">Poids (kg)</span>} barSize={7} radius={[3, 3, 0, 0]} yAxisId="right" />
-          <Bar dataKey="calories" fill="#E60000" name={<span className="legend-text">Calories brûlées (kCal)</span>} barSize={7} radius={[3, 3, 0, 0]} yAxisId="left" />
+          <Legend align="right" verticalAlign="top" 
+          wrapperStyle={{ top: 0 }} iconType="circle" iconSize="8" />
+          <Bar dataKey="kilogram" fill="#282D30" 
+          name={<span className="legend-text">Poids (kg)</span>} barSize={7} 
+          radius={[3, 3, 0, 0]} yAxisId="right" />
+          <Bar dataKey="calories" fill="#E60000" 
+          name={<span className="legend-text">Calories brûlées (kCal)</span>} 
+          barSize={7} radius={[3, 3, 0, 0]} yAxisId="left" />
         </BarChart>
       </ResponsiveContainer>
     </div>
