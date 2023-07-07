@@ -53,8 +53,8 @@ const UserActivityChart = () => {
       <h2 className="chart-title">Activité quotidienne</h2>
       <ResponsiveContainer width="100%" height="100%">
       <BarChart data={sessions} margin={{ top: 60, right: 15, left: 12, bottom: 30 }} barGap={8}>
-          <CartesianGrid vertical={false} />
-          <CartesianGrid  stroke="#DEDEDE" strokeDasharray="3 3" horizontal={true} />
+          <CartesianGrid  stroke="#DEDEDE" strokeDasharray="3 3" horizontal={true} vertical={false}
+          horizontalPoints={['26%', '53.5%']} />
           <XAxis dataKey="day" tickFormatter={formatXAxisTick}
           axisLine={{ stroke: '#DEDEDE' }} scale='point' />
           <YAxis yAxisId="left" orientation="left" hide={true} />
