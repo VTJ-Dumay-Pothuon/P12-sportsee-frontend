@@ -32,7 +32,6 @@ const UserTodayScoreChart = () => {
   // Calculate the start and end angles based on the todayScore value
   const startAngle = 90;
   const endAngle = 90 + 3.6 * todayScore;
-
   const renderCustomLabel = ({ cx, cy }) => (
     
     <g>
@@ -42,7 +41,7 @@ const UserTodayScoreChart = () => {
         <tspan x={cx} dy="1.2em"  fontSize="18px" fill="#74798C">objectif</tspan>
       </text>
       <text x={cx - 100 + (window.innerWidth < 1440 ? (1440 - window.innerWidth) / 20 : 0)}
-      y={cy - 100 + (window.innerWidth < 1440 ? (1440 - window.innerWidth) / 20 : 0)} 
+      y={cy - 80}
             textAnchor="start" className="score-label" fill="#20253A">
         Score
       </text>

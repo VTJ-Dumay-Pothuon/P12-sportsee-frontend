@@ -29,11 +29,11 @@ const UserPerformanceChart = () => {
 
   return (
     <div className="chart-container-small">
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width='100%' height='100%'>
         <RadarChart
-          cx='50%'
+          cx='49%'
           cy='50%'
-          outerRadius={80}
+          outerRadius='70%'
           startAngle={210}
           endAngle={570}
           data={performanceData.data}
@@ -41,7 +41,7 @@ const UserPerformanceChart = () => {
           className='performance-chart'
         >
           <PolarGrid gridType="polygon" radialLines={false}  />
-          <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFF', fontSize: '0.75vw' }} 
+          <PolarAngleAxis dataKey="kind" tick={{ fill: '#FFF', fontSize: '0.6rem' }} 
           tickFormatter={label => performanceLabels[label]} />
           <Radar dataKey="value" stroke={"false"} fill="#F11" fillOpacity={0.7} />
         </RadarChart>
